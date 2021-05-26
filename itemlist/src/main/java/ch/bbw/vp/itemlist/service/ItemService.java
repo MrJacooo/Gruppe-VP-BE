@@ -34,4 +34,12 @@ public class ItemService {
     public void deleteItemById(long id) {
         itemRepository.deleteItemById(id);
     }
+
+    public Item getItemById(long id) {
+        return itemRepository.getItemById(id);
+    }
+
+    public void updateBoughtStatusById(long id) {
+        itemRepository.updateBoughtStatusById(id);
+    }
 }
