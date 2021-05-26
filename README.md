@@ -8,7 +8,7 @@ It contains a three-layer app, which has all the CRUD methods, fully functioning
 The getMapping() method is triggered by the default path. It does not need any parameters or RequestBody. The method returns all list items when called.
 
 #### **_PostMapping(Item item)_**
-The postMapping(_Item item_) method is triggered by the default path. It needs an item, which is given to it by the RequestBody. The needed parameters look like this:  
+The postMapping(_Item item_) method is triggered by the default path. It needs an item, which is given to it by the RequestBody. It creates a new Object and adds it onto the list. The needed parameters look like this:  
 `
 {  
 "name": "myName",  
@@ -20,10 +20,10 @@ The postMapping(_Item item_) method is triggered by the default path. It needs a
 `
 
 #### **_DeleteMapping(long id)_**
-The deleteMapping(_long id_) method is triggered by the path: "/id". It only needs the path variable to function. The needed parameter can be any existing number.
+The deleteMapping(_long id_) method is triggered by the path: "/id". It only needs the path variable to function. It deletes the Object with the given id. The needed parameter can be any existing number.
 
 #### **_PutMapping(long id)_**
-The putMapping(_long id_) method is triggered by the path "/id". It only needs the path variable to function. The needed parameter can be any existing number.
+The putMapping(_long id_) method is triggered by the path "/id". It only needs the path variable to function. It changes the "alreadyBought" boolean status. The needed parameter can be any existing number.
 
 ## Version updates
 #### **_Version 1.0_**
@@ -43,3 +43,6 @@ Added the putMapping method, which is able to change the status of the boolean "
 
 #### **_Version 4.1_**
 Updated the README.md file. It was missing the Version 4.0 text.
+
+#### **_Version 4.2_**
+Updated the README.md file. The methods where missing what they actually do. _oops_
