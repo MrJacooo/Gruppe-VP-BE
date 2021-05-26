@@ -38,6 +38,19 @@ public class ItemRepository {
         }
     }
 
+    public boolean deleteItemById(long id) {
+        try {
+            for (int i = 0; i < itemList.size(); i++) {
+                if (itemList.get(i).getId() == id) {
+                    itemList.remove(i);
+                }
+            }
+            return true;
+        } catch (Exception failedToDelete) {
+            return false;
+        }
+    }
+
     @Override
     public String toString() {
         return "itemRepository{" +

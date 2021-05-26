@@ -36,4 +36,10 @@ public class ItemController {
         itemService.createItem(item);
         return itemService.getItems();
     }
+    @CrossOrigin(origins = "localhost:3000")
+    @DeleteMapping(path = "{id}")
+    public ArrayList deleteItem(@PathVariable long id) {
+        itemService.deleteItemById(id);
+        return itemService.getItems();
+    }
 }
