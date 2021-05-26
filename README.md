@@ -1,6 +1,6 @@
 # Gruppe-VP-BE
 ## What this app does
-This app is a backend for [this repository](https://github.com/MrJacooo/Gruppe2-VP-FE). The backend sends items from a list, which is not hooked up to any database, as JSON Objects.  
+This app is a backend for [this repository](https://github.com/MrJacooo/Gruppe2-VP-FE). The backend sends items from a list, which is not hooked up to any database, but rather has a list, which saved all the items as Objects. All the items can be returned as JSON Objects.  
 It contains a three-layer app, which has all the CRUD methods, fully functioning. All methods contain a CORS-Adress, which will probably be needed to change.
 
 ## Methods
