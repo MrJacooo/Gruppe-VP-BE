@@ -51,6 +51,26 @@ public class ItemRepository {
         }
     }
 
+    public Item getItemById(long id) {
+        for (int i = 0; i < itemList.size(); i++) {
+            if (itemList.get(i).getId() == id) {
+                return itemList.get(i);
+            }
+        }
+        return new Item("None", "There was no item found with your id");
+    }
+
+    public boolean updateBoughtStatusById (long id) {
+        for (int i = 0; i < itemList.size(); i++) {
+            if (itemList.get(i).getId() == id) {
+                itemList.get(i).setAlreadyBought(!getItemById(id).isAlreadyBought());
+                return true;
+            }
+        }
+        return false;
+
+    }
+
     @Override
     public String toString() {
         return "itemRepository{" +

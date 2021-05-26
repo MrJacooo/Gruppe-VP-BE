@@ -31,6 +31,11 @@ public class Item {
         this.addedDate = LocalDate.now();
     }
 
+    public Item(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
     public Item() { }
 
     public long getId() {
