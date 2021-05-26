@@ -8,9 +8,9 @@ import java.time.LocalDate;
  * @version: 26.05.2021
  **/
 
-public class item {
+public class Item {
 
-    private static long newestId;
+    private static long newestId = 0;
 
     private long id;
     private String name;
@@ -20,7 +20,7 @@ public class item {
     private boolean alreadyBought;
     private LocalDate addedDate;
 
-    public item(String name, String description, int amount, String amountType, boolean alreadyBought) {
+    public Item(String name, String description, int amount, String amountType, boolean alreadyBought) {
         this.id = newestId;
         newestId++;
         this.name = name;
@@ -31,7 +31,7 @@ public class item {
         this.addedDate = LocalDate.now();
     }
 
-    public item() { }
+    public Item() { }
 
     public long getId() {
         return id;
@@ -87,5 +87,10 @@ public class item {
 
     public void setAddedDate(LocalDate addedDate) {
         this.addedDate = addedDate;
+    }
+
+    public static long makeNewId() {
+        newestId++;
+        return newestId-1;
     }
 }
