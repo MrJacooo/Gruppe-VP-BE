@@ -37,3 +37,9 @@ Added the deleteMapping method, which is able to delete existing items, by passi
 
 #### **_Version 3.1_**
 Updated the README.md file. It had a few spelling errors, so I corrected them.
+
+#### **_Version 4.0_**
+Added the putMapping method, which is able to change the status of the boolean "alreadyBought".
+
+#### **_Version 4.1_**
+Updated the README.md file. It was missing the Version 4.0 text.
