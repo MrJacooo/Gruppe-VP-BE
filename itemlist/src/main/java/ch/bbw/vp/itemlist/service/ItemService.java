@@ -30,4 +30,8 @@ public class ItemService {
     public void createItem(Item item){
         itemRepository.addItem(item);
     }
+
+    public void deleteItemById(long id) {
+        itemRepository.deleteItemById(id);
+    }
 }
