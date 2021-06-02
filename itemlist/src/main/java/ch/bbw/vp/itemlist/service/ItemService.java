@@ -1,7 +1,8 @@
 package ch.bbw.vp.itemlist.service;
 
 import ch.bbw.vp.itemlist.model.Item;
-import ch.bbw.vp.itemlist.persistence.ItemRepository;
+import ch.bbw.vp.itemlist.model.Person;
+import ch.bbw.vp.itemlist.persistence.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,30 +17,30 @@ import java.util.ArrayList;
 @Service
 public class ItemService {
 
-    private final ItemRepository itemRepository;
+    private final ProjectRepository projectRepository;
 
     @Autowired
-    public ItemService(ItemRepository itemRepository) {
-        this.itemRepository = itemRepository;
+    public ItemService(ProjectRepository itemRepository) {
+        this.projectRepository = itemRepository;
     }
 
     public ArrayList<Item> getItems(){
-        return itemRepository.getItemList();
+        return projectRepository.getItemList();
     }
 
     public void createItem(Item item){
-        itemRepository.addItem(item);
+        projectRepository.addItem(item);
     }
 
     public void deleteItemById(long id) {
-        itemRepository.deleteItemById(id);
+        projectRepository.deleteItemById(id);
     }
 
     public Item getItemById(long id) {
-        return itemRepository.getItemById(id);
+        return projectRepository.getItemById(id);
     }
 
     public void updateBoughtStatusById(long id) {
-        itemRepository.updateBoughtStatusById(id);
+        projectRepository.updateBoughtStatusById(id);
     }
 }
