@@ -73,4 +73,4 @@ Bug fixes with the CORS security
 Added Person with all CORS methods
 
 #### **_Version 5.1_**
-Added Bewertung as an attribute
+Added Dringlichkeit as an attribute
