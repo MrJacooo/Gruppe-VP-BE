@@ -46,3 +46,6 @@ Updated the README.md file. It was missing the Version 4.0 text.
 
 #### **_Version 4.2_**
 Updated the README.md file. The methods where missing what they actually do. _oops_
+
+#### **_Version 4.3_**
+Bug fixes with the CORS security
