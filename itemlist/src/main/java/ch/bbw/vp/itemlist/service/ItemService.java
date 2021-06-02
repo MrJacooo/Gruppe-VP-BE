@@ -17,34 +17,30 @@ import java.util.ArrayList;
 @Service
 public class ItemService {
 
-    private final ProjectRepository itemRepository;
+    private final ProjectRepository projectRepository;
 
     @Autowired
     public ItemService(ProjectRepository itemRepository) {
-        this.itemRepository = itemRepository;
+        this.projectRepository = itemRepository;
     }
 
     public ArrayList<Item> getItems(){
-        return itemRepository.getItemList();
-    }
-
-    public ArrayList<Person> getPersons() {
-        return itemRepository.getPersonList();
+        return projectRepository.getItemList();
     }
 
     public void createItem(Item item){
-        itemRepository.addItem(item);
+        projectRepository.addItem(item);
     }
 
     public void deleteItemById(long id) {
-        itemRepository.deleteItemById(id);
+        projectRepository.deleteItemById(id);
     }
 
     public Item getItemById(long id) {
-        return itemRepository.getItemById(id);
+        return projectRepository.getItemById(id);
     }
 
     public void updateBoughtStatusById(long id) {
-        itemRepository.updateBoughtStatusById(id);
+        projectRepository.updateBoughtStatusById(id);
     }
 }

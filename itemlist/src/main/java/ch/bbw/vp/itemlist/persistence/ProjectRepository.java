@@ -61,7 +61,7 @@ public class ProjectRepository {
         }
     }
 
-    public boolean addPerson(Person person){
+    public boolean addPerson(Person person) {
         try {
             person.setId(Person.makeNewId());
             personList.add(person);
@@ -76,6 +76,19 @@ public class ProjectRepository {
             for (int i = 0; i < itemList.size(); i++) {
                 if (itemList.get(i).getId() == id) {
                     itemList.remove(i);
+                }
+            }
+            return true;
+        } catch (Exception failedToDelete) {
+            return false;
+        }
+    }
+
+    public boolean deletePersonById(long id) {
+        try {
+            for (int i = 0; i < personList.size(); i++) {
+                if (personList.get(i).getId() == id) {
+                    personList.remove(i);
                 }
             }
             return true;
