@@ -50,4 +50,11 @@ public class ItemController {
         itemService.updateBoughtStatusById(id);
         return itemService.getItemById(id);
     }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @PutMapping(path = "{id}/{newDringlichkeit}")
+    public Item updateDringlichkeit(@PathVariable int newDringlichkeit, @PathVariable long id) {
+        itemService.updateBewertungById(id, newDringlichkeit);
+        return itemService.getItemById(id);
+    }
 }

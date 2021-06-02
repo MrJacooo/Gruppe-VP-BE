@@ -43,4 +43,8 @@ public class ItemService {
     public void updateBoughtStatusById(long id) {
         projectRepository.updateBoughtStatusById(id);
     }
+
+    public void updateBewertungById(long id, int newDringlichkeit) {
+        projectRepository.updateBewertungById(id, newDringlichkeit);
+    }
 }

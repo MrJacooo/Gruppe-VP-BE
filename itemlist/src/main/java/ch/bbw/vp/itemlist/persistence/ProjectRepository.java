@@ -19,13 +19,13 @@ public class ProjectRepository {
 
     public ProjectRepository() {
         itemList.add(
-                new Item("Milk", "Buy milk, it's urgend!", 2, "liters", false)
+                new Item("Milk", "Buy milk, it's urgend!", 2, "liters", false, 3)
         );
         itemList.add(
-                new Item("Water", "I'm thirsty", 4, "liters", true)
+                new Item("Water", "I'm thirsty", 4, "liters", true, 1)
         );
         itemList.add(
-                new Item("Cookies", "Yes", 10, "pieces", false)
+                new Item("Cookies", "Yes", 10, "pieces", false, 4)
         );
 
         personList.add(
@@ -115,6 +115,16 @@ public class ProjectRepository {
         }
         return false;
 
+    }
+
+    public boolean updateBewertungById (long id, int newDringlichkeit) {
+        for (int i = 0; i < itemList.size(); i++) {
+            if (itemList.get(i).getId() == id) {
+                itemList.get(i).setDringlichkeit(newDringlichkeit);
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
