@@ -19,6 +19,8 @@ public class Item {
     private String amountType;
     private boolean alreadyBought;
     private LocalDate addedDate;
+    private Person zugewiesenePerson;
+
 
     public Item(String name, String description, int amount, String amountType, boolean alreadyBought) {
         this.id = newestId;
@@ -29,6 +31,18 @@ public class Item {
         this.amountType = amountType;
         this.alreadyBought = alreadyBought;
         this.addedDate = LocalDate.now();
+    }
+
+    public Item(String name, String description, int amount, String amountType, boolean alreadyBought, Person zugewiesenePerson) {
+        this.id = newestId;
+        newestId++;
+        this.name = name;
+        this.description = description;
+        this.amount = amount;
+        this.amountType = amountType;
+        this.alreadyBought = alreadyBought;
+        this.addedDate = LocalDate.now();
+        this.zugewiesenePerson = zugewiesenePerson;
     }
 
     public Item(String name, String description) {
