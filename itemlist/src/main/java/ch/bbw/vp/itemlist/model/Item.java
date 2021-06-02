@@ -19,10 +19,11 @@ public class Item {
     private String amountType;
     private boolean alreadyBought;
     private LocalDate addedDate;
+    private int dringlichkeit;
     private Person zugewiesenePerson;
 
 
-    public Item(String name, String description, int amount, String amountType, boolean alreadyBought) {
+    public Item(String name, String description, int amount, String amountType, boolean alreadyBought, int dringlichkeit) {
         this.id = newestId;
         newestId++;
         this.name = name;
@@ -30,10 +31,11 @@ public class Item {
         this.amount = amount;
         this.amountType = amountType;
         this.alreadyBought = alreadyBought;
+        this.dringlichkeit = dringlichkeit;
         this.addedDate = LocalDate.now();
     }
 
-    public Item(String name, String description, int amount, String amountType, boolean alreadyBought, Person zugewiesenePerson) {
+    public Item(String name, String description, int amount, String amountType, boolean alreadyBought, Person zugewiesenePerson, int dringlichkeit) {
         this.id = newestId;
         newestId++;
         this.name = name;
@@ -42,6 +44,7 @@ public class Item {
         this.amountType = amountType;
         this.alreadyBought = alreadyBought;
         this.addedDate = LocalDate.now();
+        this.dringlichkeit = dringlichkeit;
         this.zugewiesenePerson = zugewiesenePerson;
     }
 
@@ -106,6 +109,14 @@ public class Item {
 
     public void setAddedDate(LocalDate addedDate) {
         this.addedDate = addedDate;
+    }
+
+    public int getDringlichkeit() {
+        return dringlichkeit;
+    }
+
+    public void setDringlichkeit(int dringlichkeit) {
+        this.dringlichkeit = dringlichkeit;
     }
 
     public static long makeNewId() {
