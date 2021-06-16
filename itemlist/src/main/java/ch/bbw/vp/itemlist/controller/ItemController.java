@@ -44,17 +44,10 @@ public class ItemController {
         return itemService.getItems();
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://localhost:3000")
     @PutMapping(path = "{id}")
-    public Item updateBoughtStatus(@PathVariable long id) {
-        itemService.updateBoughtStatusById(id);
-        return itemService.getItemById(id);
-    }
-
-    @CrossOrigin(origins = "http://localhost:3000")
-    @PutMapping(path = "{id}/{newDringlichkeit}")
-    public Item updateDringlichkeit(@PathVariable int newDringlichkeit, @PathVariable long id) {
-        itemService.updateBewertungById(id, newDringlichkeit);
+    public Item updateItem(@PathVariable long id, @RequestBody Item item) {
+        itemService.updateChangedById(id, item);
         return itemService.getItemById(id);
     }
 }

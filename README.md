@@ -22,8 +22,17 @@ The postMapping(_Item item_) method is triggered by the default path. It needs a
 #### **_DeleteMapping(long id)_**
 The deleteMapping(_long id_) method is triggered by the path: "/id". It only needs the path variable to function. It deletes the Object with the given id. The needed parameter can be any existing number.
 
-#### **_PutMapping(long id)_**
-The putMapping(_long id_) method is triggered by the path "/id". It only needs the path variable to function. It changes the "alreadyBought" boolean status. The needed parameter can be any existing number.
+#### **_PutMapping(long id, Item item)_**
+The putMapping(_long id_) method is triggered by the path "/id". It needs the item Object as the request body to work. The user can give too many informations without causing problems, but not giving enough messes up the object and puts it variables to 0. The body should at least look like this:  
+`
+{  
+"name": "myName",  
+"description": "myDescription",  
+"amount": "myAmount",  
+"amountType": "myAmountType",  
+"alreadyBought": "isAlreadyBought"  
+}
+`
 
 ## Person Methods
 #### **_GetMapping()_**
@@ -74,3 +83,6 @@ Added Person with all CORS methods
 
 #### **_Version 5.1_**
 Added Dringlichkeit as an attribute
+
+#### **_Version 5.2_**
+Edited the putMapping, so its way better to use

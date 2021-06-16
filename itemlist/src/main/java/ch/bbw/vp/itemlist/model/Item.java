@@ -95,7 +95,7 @@ public class Item {
         this.amountType = amountType;
     }
 
-    public boolean isAlreadyBought() {
+    public boolean getAlreadyBought() {
         return alreadyBought;
     }
 

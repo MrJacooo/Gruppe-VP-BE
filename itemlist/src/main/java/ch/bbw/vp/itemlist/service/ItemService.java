@@ -40,11 +40,8 @@ public class ItemService {
         return projectRepository.getItemById(id);
     }
 
-    public void updateBoughtStatusById(long id) {
-        projectRepository.updateBoughtStatusById(id);
+    public void updateChangedById(long id, Item newItem) {
+        projectRepository.updateChangedById(id, newItem);
     }
 
-    public void updateBewertungById(long id, int newDringlichkeit) {
-        projectRepository.updateBewertungById(id, newDringlichkeit);
-    }
 }
