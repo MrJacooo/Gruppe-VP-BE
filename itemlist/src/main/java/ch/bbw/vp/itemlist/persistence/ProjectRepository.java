@@ -106,21 +106,27 @@ public class ProjectRepository {
         return new Item("None", "There was no item found with your id");
     }
 
-    public boolean updateBoughtStatusById (long id) {
+    public boolean updateChangedById(long id, Item newItem){
         for (int i = 0; i < itemList.size(); i++) {
             if (itemList.get(i).getId() == id) {
-                itemList.get(i).setAlreadyBought(!getItemById(id).isAlreadyBought());
-                return true;
-            }
-        }
-        return false;
-
-    }
-
-    public boolean updateBewertungById (long id, int newDringlichkeit) {
-        for (int i = 0; i < itemList.size(); i++) {
-            if (itemList.get(i).getId() == id) {
-                itemList.get(i).setDringlichkeit(newDringlichkeit);
+                if (!itemList.get(i).getName().equals(newItem.getName())) {
+                    itemList.get(i).setName(newItem.getName());
+                }
+                if (itemList.get(i).getAmount() != newItem.getAmount()) {
+                    itemList.get(i).setAmount(newItem.getAmount());
+                }
+                if (!itemList.get(i).getDescription().equals(newItem.getDescription())) {
+                    itemList.get(i).setDescription(newItem.getDescription());
+                }
+                if (!itemList.get(i).getAmountType().equals(newItem.getAmountType())) {
+                    itemList.get(i).setAmountType(newItem.getAmountType());
+                }
+                if (itemList.get(i).getAlreadyBought() != newItem.getAlreadyBought()) {
+                    itemList.get(i).setAlreadyBought(newItem.getAlreadyBought());
+                }
+                if (itemList.get(i).getDringlichkeit() != newItem.getDringlichkeit()) {
+                    itemList.get(i).setDringlichkeit(newItem.getDringlichkeit());
+                }
                 return true;
             }
         }
