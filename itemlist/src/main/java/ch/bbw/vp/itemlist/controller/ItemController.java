@@ -44,7 +44,7 @@ public class ItemController {
         return itemService.getItems();
     }
 
-    @CrossOrigin(origins = "https://localhost:3000")
+    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping(path = "{id}")
     public Item updateItem(@PathVariable long id, @RequestBody Item item) {
         itemService.updateChangedById(id, item);

@@ -29,6 +29,9 @@ public class ProjectRepository {
         );
 
         personList.add(
+                new Person ("At everyone")
+        );
+        personList.add(
                 new Person("Mathoolika")
         );
         personList.add(

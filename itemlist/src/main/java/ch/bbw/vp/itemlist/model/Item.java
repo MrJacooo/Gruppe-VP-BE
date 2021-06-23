@@ -1,5 +1,7 @@
 package ch.bbw.vp.itemlist.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalDate;
 
 /**
@@ -20,7 +22,6 @@ public class Item {
     private boolean alreadyBought;
     private LocalDate addedDate;
     private int dringlichkeit;
-    private Person zugewiesenePerson;
 
 
     public Item(String name, String description, int amount, String amountType, boolean alreadyBought, int dringlichkeit) {
@@ -33,19 +34,6 @@ public class Item {
         this.alreadyBought = alreadyBought;
         this.dringlichkeit = dringlichkeit;
         this.addedDate = LocalDate.now();
-    }
-
-    public Item(String name, String description, int amount, String amountType, boolean alreadyBought, Person zugewiesenePerson, int dringlichkeit) {
-        this.id = newestId;
-        newestId++;
-        this.name = name;
-        this.description = description;
-        this.amount = amount;
-        this.amountType = amountType;
-        this.alreadyBought = alreadyBought;
-        this.addedDate = LocalDate.now();
-        this.dringlichkeit = dringlichkeit;
-        this.zugewiesenePerson = zugewiesenePerson;
     }
 
     public Item(String name, String description) {
