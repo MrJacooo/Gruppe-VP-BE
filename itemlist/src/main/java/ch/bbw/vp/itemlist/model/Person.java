@@ -25,6 +25,7 @@ public class Person {
     public boolean addItem(Item item){
         try{
             itemList.add(item);
+            item.setPersonId(this.id);
             return true;
         } catch (Exception couldNotAddItem){
             return false;

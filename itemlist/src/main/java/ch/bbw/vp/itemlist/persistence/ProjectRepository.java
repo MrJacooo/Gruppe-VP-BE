@@ -43,7 +43,7 @@ public class ProjectRepository {
 
         personList.get(0).addItem(itemList.get(0));
         personList.get(0).addItem(itemList.get(1));
-        personList.get(0).addItem(itemList.get(2));
+        personList.get(1).addItem(itemList.get(2));
     }
 
     public ArrayList<Item> getItemList(){
