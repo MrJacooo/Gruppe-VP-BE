@@ -78,6 +78,7 @@ public class ProjectRepository {
         try {
             for (int i = 0; i < itemList.size(); i++) {
                 if (itemList.get(i).getId() == id) {
+                    removeSelfOffPerson(itemList.get(i));
                     itemList.remove(i);
                 }
             }
@@ -85,6 +86,20 @@ public class ProjectRepository {
         } catch (Exception failedToDelete) {
             return false;
         }
+    }
+
+    public boolean removeSelfOffPerson(Item item) {
+        for (int i = 0; i < personList.size(); i++) {
+            if (item.getPersonId() == personList.get(i).getId()) {
+                for (int j = 0; j < personList.get(i).getItemList().size(); j++) {
+                    if (item.getId() == personList.get(i).getItemList().get(j).getId()){
+                        personList.get(i).getItemList().remove(j);
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
     public boolean deletePersonById(long id) {
