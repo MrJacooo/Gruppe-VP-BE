@@ -127,22 +127,22 @@ public class ProjectRepository {
     public boolean updateChangedById(long id, Item newItem){
         for (int i = 0; i < itemList.size(); i++) {
             if (itemList.get(i).getId() == id) {
-                if (!itemList.get(i).getName().equals(newItem.getName())) {
+                if (!itemList.get(i).getName().equals(newItem.getName()) || itemList.get(i).getName() == null) {
                     itemList.get(i).setName(newItem.getName());
                 }
-                if (itemList.get(i).getAmount() != newItem.getAmount()) {
+                if (itemList.get(i).getAmount() != newItem.getAmount() || itemList.get(i).getAmount() == 0) {
                     itemList.get(i).setAmount(newItem.getAmount());
                 }
-                if (!itemList.get(i).getDescription().equals(newItem.getDescription())) {
+                if (!itemList.get(i).getDescription().equals(newItem.getDescription()) || itemList.get(i).getDescription() == null) {
                     itemList.get(i).setDescription(newItem.getDescription());
                 }
-                if (!itemList.get(i).getAmountType().equals(newItem.getAmountType())) {
+                if (!itemList.get(i).getAmountType().equals(newItem.getAmountType()) || itemList.get(i).getAmountType() == null) {
                     itemList.get(i).setAmountType(newItem.getAmountType());
                 }
-                if (itemList.get(i).getAlreadyBought() != newItem.getAlreadyBought()) {
+                if (itemList.get(i).getAlreadyBought() != newItem.getAlreadyBought() || itemList.get(i).getAlreadyBought() == false) {
                     itemList.get(i).setAlreadyBought(newItem.getAlreadyBought());
                 }
-                if (itemList.get(i).getDringlichkeit() != newItem.getDringlichkeit()) {
+                if (itemList.get(i).getDringlichkeit() != newItem.getDringlichkeit() || itemList.get(i).getDringlichkeit() == 0) {
                     itemList.get(i).setDringlichkeit(newItem.getDringlichkeit());
                 }
                 return true;
